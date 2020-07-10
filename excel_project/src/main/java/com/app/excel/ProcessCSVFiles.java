@@ -13,14 +13,14 @@ import com.opencsv.CSVWriter;
 
 public class ProcessCSVFiles {
 	public static void main(String[] args) throws IOException {
-		String path1 = "D:\\Test\\order_details_1.csv"; // Path of 1st Orders sheet
-		String path2 = "D:\\Test\\order_details_2.csv";// Path of 2ns Orders sheet
+		String path1 = "D:\\Orders\\order_details_1.csv"; // Path of 1st Orders sheet
+		String path2 = "D:\\Orders\\order_details_2.csv";// Path of 2ns Orders sheet
 		List<Order> total_order_list = new ArrayList<Order>();
 		List<Order> order_list1 = processOrderSheet(path1);
 		List<Order> order_list2 = processOrderSheet(path2);
 		total_order_list.addAll(order_list1);
 		total_order_list.addAll(order_list2);//This contains the combined data of the 2 sheets.
-		String payment_path = "D:\\Test\\payment_sheet.csv"; // Address of the payment sheet that will be created.
+		String payment_path = "D:\\Orders\\payment_sheet.csv"; // Address of the payment sheet that will be created.
 		processPaymentSheet(payment_path, total_order_list);
 
 	}
